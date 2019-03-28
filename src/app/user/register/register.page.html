@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Họ và Tên</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input type="password" [(ngModel)]="cpassword"></ion-input>
+    </ion-item>
+
+    
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Điện thoại liên lạc</ion-label>
+      <ion-input type="number" [(ngModel)]="callnumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Địa chỉ giao hàng</ion-label>
+      <ion-input type="text" [(ngModel)]="address"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button fill="solid" expand="block" color="dark" (click)="register()"
+    >Signup</ion-button
+  >
+</ion-content>

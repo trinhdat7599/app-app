@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Thêm sản phẩm</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-label position="floating">Tên sản phẩm</ion-label>
+          <ion-input type="text" [(ngModel)]="name"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-button (click)="selectImage()">Thêm ảnh<ion-icon name="image"></ion-icon></ion-button>
+          <img *ngIf="cameraImage!=null" [src] = "cameraImage"/>
+        </ion-item>
+      <form [formGroup]="formName">
+        <ion-item >
+            <ion-label>Loại thực phẩm</ion-label>
+            <ion-select okText="Okay" cancelText="Dismiss" formControlName="category" (ionChange)="importCode()">
+                  <ion-select-option *ngFor="let i of Categoryname| async" [value]="i.code" >{{i.categoryname}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+      </form>
+        
+        <ion-item>
+          <ion-label position="floating">Giá tiền (Tính theo dollas)</ion-label>
+          <ion-input type="number" [(ngModel)]="pirce"></ion-input>
+        </ion-item>
+    
+      </ion-list>
+    
+      <ion-button fill="solid" expand="block" color="dark" (click)="newProducts()"
+        >Thêm mới sản phẩm</ion-button
+      >
+</ion-content>
